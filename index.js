@@ -141,22 +141,6 @@ function toggle(startOver = true) {
 }
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 voicesDropdown.addEventListener('change', setVoice);
-// Function to sort notes.
-function sort() {
-    let existingNotes = localStorage.getItem("existingNotes");
-    if (existingNotes == null) {
-        notesObj = [];
-    } else {
-        notesObj = JSON.parse(existingNotes);
-    }
-    console.log("working");
-
-    notesObj.sort((day1, day2) => {
-        let a = new Date(day1.date);
-        let b = new Date(day2.date);
-        return a - b;
-    });
-}
 // Function to print Notes. Windows Variable is used.
 function printNotes(index) {
     var divContents = document.getElementById(index).innerHTML;
